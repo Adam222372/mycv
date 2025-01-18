@@ -1,40 +1,78 @@
-import type {Metadata} from "next";
+"use client"
 import styles from "./page.module.css"
-import {remove} from "next/dist/build/webpack/loaders/resolve-url-loader/lib/file-protocol";
-
-export const metadata: Metadata = {
-  title: "Home",
-  description: "This is home of my web CV",
-};
-
-function hover(event: React.MouseEvent<HTMLDivElement>) {
-    const id = event.currentTarget.id;
-
-
-}
+import React from "react";
 
 export default function Home() {
-  return (
-      <div className={styles.gridContainer}>
+    const [hoveredDivId, setHoveredDivId] = React.useState<string | null>(null);
 
-        <div id={"sectionA"} className={styles.sectionA} >
-          <div>
-            <h1>About me</h1>
-          </div>
-          <div className={styles.profilePicture}/>
-        </div>
+    const handleHover = (event: React.MouseEvent<HTMLDivElement>): void => {
+        const hoveredItemId = event.currentTarget.id;
+        setHoveredDivId(hoveredItemId);
+    }
 
-        <div id={"sectionB"} className={styles.sectionB}>
-          <h1>Carrier</h1>
-        </div>
-        <div id={"sectionC"} className={styles.sectionC}>
-          <h1>Education</h1>
-        </div>
+    const handleMouseLeave = (): void => {
+        setHoveredDivId(null);
+    };
 
-        <div id={"sectionD"} className={styles.sectionD}>
-          <h1>Experiences</h1>
-        </div>
+    return (
+        <div className={styles.gridContainer}>
+            <div
+                id="sectionA"
+                className={styles.sectionA}
+                onMouseEnter={handleHover}
+                style={{
+                    display: hoveredDivId && hoveredDivId !== "sectionA" ? "none" : "flex",
+                    gridColumn: hoveredDivId === "sectionA" ? "1 / -1" : "1/ span 2", // Stretches the element
+                    gridRow: hoveredDivId === "sectionA" ? "1 / -1" : "auto",
+                }}
+                onMouseLeave={handleMouseLeave}>
+                <div>
+                    <h1>About me</h1>
+                </div>
+                <div className={styles.profilePicture}/>
+            </div>
 
-      </div>
-  );
+            <div
+                id="sectionB"
+                className={styles.sectionB}
+                onMouseEnter={handleHover}
+                style={{
+                    display: hoveredDivId && hoveredDivId !== "sectionB" ? "none" : "grid",
+                    gridColumn: hoveredDivId === "sectionB" ? "1 / -1" : "auto", // Stretches the element
+                    gridRow: hoveredDivId === "sectionB" ? "1 / -1" : "auto",    // Stretches the element
+                }}
+                onMouseLeave={handleMouseLeave}
+            >
+                <h1>Carrier</h1>
+            </div>
+
+            <div
+                id="sectionC"
+                className={styles.sectionC}
+                onMouseEnter={handleHover}
+                style={{
+                    display: hoveredDivId && hoveredDivId !== "sectionC" ? "none" : "grid",
+                    gridColumn: hoveredDivId === "sectionC" ? "1 / -1" : "auto", // Stretches the element
+                    gridRow: hoveredDivId === "sectionC" ? "1 / -1" : "2 / span 2",    // Stretches the element
+                }}
+                onMouseLeave={handleMouseLeave}
+            >
+                <h1>Education</h1>
+            </div>
+
+            <div
+                id="sectionD"
+                className={styles.sectionD}
+                onMouseEnter={handleHover}
+                style={{
+                    display: hoveredDivId && hoveredDivId !== "sectionD" ? "none" : "grid",
+                    gridColumn: hoveredDivId === "sectionD" ? "1 / -1" : "auto", // Stretches the element
+                    gridRow: hoveredDivId === "sectionD" ? "1 / -1" : "auto",    // Stretches the element
+                }}
+                onMouseLeave={handleMouseLeave}
+            >
+                <h1>Experiences</h1>
+            </div>
+        </div>
+    );
 }

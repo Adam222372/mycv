@@ -1,7 +1,6 @@
-'use client';
-
 import {Funnel_Display} from "next/font/google";
 import "./globals.css";
+import React from "react";
 
 
 //const [preferedTheme, setTheme] = useState("dark");
