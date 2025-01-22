@@ -3,15 +3,14 @@ import styles from "./page.module.css"
 import React from "react";
 
 export default function Home() {
-    const [hoveredDivId, setHoveredDivId] = React.useState<string | null>(null);
+    const [clickedElement, setClickedElement] = React.useState(["", false]);
 
-    const handleHover = (event: React.MouseEvent<HTMLDivElement>): void => {
+    const handleClick = (event: React.MouseEvent<HTMLDivElement>): void => {
         const hoveredItemId = event.currentTarget.id;
-        setHoveredDivId(hoveredItemId);
+        setClickedElement();
     }
-
     const handleMouseLeave = (): void => {
-        setHoveredDivId(null);
+        setClickedElement();
     };
 
     return (
@@ -19,13 +18,7 @@ export default function Home() {
             <div
                 id="sectionA"
                 className={styles.sectionA}
-                onMouseEnter={handleHover}
-                style={{
-                    display: hoveredDivId && hoveredDivId !== "sectionA" ? "none" : "flex",
-                    gridColumn: hoveredDivId === "sectionA" ? "1 / -1" : "1/ span 2", // Stretches the element
-                    gridRow: hoveredDivId === "sectionA" ? "1 / -1" : "auto",
-                }}
-                onMouseLeave={handleMouseLeave}>
+                onClick={handleClick}>
                 <div>
                     <h1>About me</h1>
                 </div>
@@ -35,42 +28,17 @@ export default function Home() {
             <div
                 id="sectionB"
                 className={styles.sectionB}
-                onMouseEnter={handleHover}
-                style={{
-                    display: hoveredDivId && hoveredDivId !== "sectionB" ? "none" : "grid",
-                    gridColumn: hoveredDivId === "sectionB" ? "1 / -1" : "auto", // Stretches the element
-                    gridRow: hoveredDivId === "sectionB" ? "1 / -1" : "auto",    // Stretches the element
-                }}
-                onMouseLeave={handleMouseLeave}
-            >
+                onClick={handleClick}>
                 <h1>Carrier</h1>
             </div>
 
-            <div
-                id="sectionC"
-                className={styles.sectionC}
-                onMouseEnter={handleHover}
-                style={{
-                    display: hoveredDivId && hoveredDivId !== "sectionC" ? "none" : "grid",
-                    gridColumn: hoveredDivId === "sectionC" ? "1 / -1" : "auto", // Stretches the element
-                    gridRow: hoveredDivId === "sectionC" ? "1 / -1" : "2 / span 2",    // Stretches the element
-                }}
-                onMouseLeave={handleMouseLeave}
-            >
+            <div id="sectionC" className={styles.sectionC} onClick={handleClick}>
                 <h1>Education</h1>
             </div>
 
             <div
                 id="sectionD"
-                className={styles.sectionD}
-                onMouseEnter={handleHover}
-                style={{
-                    display: hoveredDivId && hoveredDivId !== "sectionD" ? "none" : "grid",
-                    gridColumn: hoveredDivId === "sectionD" ? "1 / -1" : "auto", // Stretches the element
-                    gridRow: hoveredDivId === "sectionD" ? "1 / -1" : "auto",    // Stretches the element
-                }}
-                onMouseLeave={handleMouseLeave}
-            >
+                className={styles.sectionD} onClick={handleClick}>
                 <h1>Experiences</h1>
             </div>
         </div>
