@@ -34,7 +34,6 @@
 .sectionA:not(:hover), .sectionB:not(:hover), .sectionC:not(:hover), .sectionD:not(:hover) {
     transition: 0.3s;
     box-shadow: none;
-
 }
 
 .profilePicture {
@@ -45,4 +44,24 @@
     background-size: cover;
     background-image: url("../../public/Photo on 16.10.2024 at 13.17.jpeg");
 
+}
+.crossButton{
+    position: relative;
+    top: 20px;
+    right: 10px;
+    background-color: var(--foreground);
+    color: var(--background);
+    opacity: 0.7;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bolder;
+}
+.crossButton:hover {
+    transition: 0.25s;
+    opacity: 1;
+}
+.crossButton:not(:hover) {
+    transition: 0.25s;
 }
