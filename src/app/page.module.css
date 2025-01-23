@@ -65,3 +65,12 @@
 .crossButton:not(:hover) {
     transition: 0.25s;
 }
+.visible {
+    display: block;
+    grid-column: span 2; /* Ensure it spans across two columns */
+    grid-row: span 2;    /* Ensure it spans across two rows */
+}
+
+.hidden {
+    display: none;
+}
