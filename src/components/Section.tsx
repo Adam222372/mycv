@@ -1,5 +1,7 @@
 import styles from "@/app/page.module.css";
 import React from "react";
+import {motion} from "motion/react"
+
 
 interface Section {
     id: string,
@@ -14,14 +16,23 @@ export default function Section({id, title, description}: Section) {
         setClicked([id, true]);
     }
     const handleBtnHideClick = () => {
-        setClicked(["", false]);
+        setClicked(["", !clicked[1]]);
     }
 
     return (
-        <div id={id} onClick={handleClick} className={clicked[0] === "" ? styles[id] : }>
+
+
+        <motion.div onClick={handleClick} className={styles[id]} animate={{
+            gridColumn: clicked[1] ? '1 / -1' : styles.id,
+            gridRow: clicked[1] ? '1 / -1' : styles.id,
+        }} transition={{duration: 0.5}}>
             <h1>{title}</h1>
             <h3>{description}</h3>
             <button className={styles.crossButton} onClick={handleBtnHideClick}>X</button>
-        </div>
+
+
+        </motion.div>
+
+
     )
 }
