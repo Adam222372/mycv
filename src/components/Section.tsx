@@ -1,12 +1,12 @@
 import styles from "@/app/page.module.css";
 import React from "react";
 
-
 interface Section {
     id: string,
     title: string,
     description: string,
     onClick: (event: React.MouseEvent) => void,
+    className?: string;
 }
 
 export default function Section({id, title, description, onClick}: Section) {
