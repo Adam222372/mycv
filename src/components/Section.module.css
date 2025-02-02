@@ -43,3 +43,26 @@
 .hidden {
     display: none;
 }
+.crossButton {
+    background-color: var(--foreground);
+    color: var(--background);
+    opacity: 0.7;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bolder;
+    align-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.crossButton:hover {
+    opacity: 1;
+}
+.title{
+    margin: 0 auto;
+}
+.description{
+    margin: 15px 0;
+}

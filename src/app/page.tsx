@@ -7,8 +7,8 @@ export default function Home() {
     const [clickedIndex, setClickedIndex] = React.useState<string | undefined>(undefined);
 
     const sections = [
-        { id: "sectionA", title: "Title A", description: "Description for Section A" },
-        { id: "sectionB", title: "Title B", description: "Description for Section B" },
+        { id: "sectionA", title: "About Me", description: "" },
+        { id: "sectionB", title: "Carrier", description: "Curious about my carrier?" },
         { id: "sectionC", title: "Title C", description: "Description for Section C" },
         { id: "sectionD", title: "Title D", description: "Description for Section D" }
     ];

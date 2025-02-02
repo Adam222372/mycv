@@ -8,20 +8,3 @@
     gap: 10px;
 }
 
-.crossButton {
-    position: relative;
-    top: 20px;
-    right: 10px;
-    background-color: var(--foreground);
-    color: var(--background);
-    opacity: 0.7;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-weight: bolder;
-}
-
-.crossButton:hover {
-    opacity: 1;
-}

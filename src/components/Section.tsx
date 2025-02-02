@@ -14,11 +14,12 @@ const Section: React.FC<SectionProps> = ({ id, title, description, onClick, expa
     return (
         <div
             id={id}
-            className={`${styles[id]} ${styles.section} ${expanded ? styles.expanded : ""} ${isHidden ? styles.hidden : ""}`}
+            className={`${styles[id]} ${expanded ? styles.expanded : ""} ${isHidden ? styles.hidden : ""}`}
             onClick={onClick}
         >
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2 className={styles.title}>{title}</h2>
+            <p className={styles.description}>{description}</p>
+            <div className={`${styles.hidden} ${expanded ? styles.crossButton : ""}`}>X</div>
         </div>
     );
 };
