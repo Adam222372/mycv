@@ -8,18 +8,23 @@ interface SectionProps {
     onClick: (event: React.MouseEvent) => void;
     expanded: boolean;
     isHidden: boolean;
+    backBtn: boolean;
+    clickOnCross: () => void;
 }
 
-const Section: React.FC<SectionProps> = ({ id, title, description, onClick, expanded, isHidden }) => {
+const Section: React.FC<SectionProps> = ({ id, title, description, onClick, expanded, isHidden, backBtn, clickOnCross }) => {
     return (
         <div
             id={id}
             className={`${styles[id]} ${expanded ? styles.expanded : ""} ${isHidden ? styles.hidden : ""}`}
             onClick={onClick}
         >
-            <h2 className={styles.title}>{title}</h2>
+            <h1 className={styles.title}>{title}</h1>
             <p className={styles.description}>{description}</p>
-            <div className={`${styles.hidden} ${expanded ? styles.crossButton : ""}`}>X</div>
+            <button onClick={(event) =>{
+                event.stopPropagation();
+                clickOnCross();
+            }} className={`${backBtn ? styles.crossButton : styles.hidden}`}>X</button>
         </div>
     );
 };

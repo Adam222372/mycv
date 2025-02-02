@@ -5,17 +5,21 @@ import Section from "@/components/Section";
 
 export default function Home() {
     const [clickedIndex, setClickedIndex] = React.useState<string | undefined>(undefined);
-
     const sections = [
-        { id: "sectionA", title: "About Me", description: "" },
+        { id: "sectionA", title: "About Me", description: ""},
         { id: "sectionB", title: "Carrier", description: "Curious about my carrier?" },
-        { id: "sectionC", title: "Title C", description: "Description for Section C" },
-        { id: "sectionD", title: "Title D", description: "Description for Section D" }
+        { id: "sectionC", title: "Education", description: "" },
+        { id: "sectionD", title: "Experiences", description: "" }
     ];
 
     function onClick(event: React.MouseEvent) {
         const id = event.currentTarget.id;
-        setClickedIndex((prev) => (prev === id ? undefined : id)); // Toggle expansion
+        setClickedIndex(id);
+
+    }
+
+    function clickOnCross() {
+        setClickedIndex(undefined);
     }
 
     return (
@@ -29,6 +33,8 @@ export default function Home() {
                     onClick={onClick}
                     expanded={clickedIndex === section.id}
                     isHidden={clickedIndex !== undefined && clickedIndex !== section.id}
+                    backBtn={ clickedIndex === section.id }
+                    clickOnCross={clickOnCross}
                 />
             ))}
         </div>
