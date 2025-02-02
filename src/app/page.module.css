@@ -6,46 +6,9 @@
     grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-
 }
 
-.sectionA {
-    grid-column: span 2;
-    display: flex;
-    justify-content: space-between;
-}
-
-.sectionC {
-    grid-row: span 2;
-}
-
-.sectionA, .sectionB, .sectionC, .sectionD {
-    border: 2px solid var(--foreground);
-    padding: 20px;
-    border-radius: 30px;
-    cursor: pointer;
-}
-
-.sectionA:hover, .sectionB:hover, .sectionC:hover, .sectionD:hover {
-    transition: 0.25s;
-    box-shadow: 0 0 40px var(--foreground);
-}
-
-.sectionA:not(:hover), .sectionB:not(:hover), .sectionC:not(:hover), .sectionD:not(:hover) {
-    transition: 0.3s;
-    box-shadow: none;
-}
-
-.profilePicture {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    background-image: url("../../public/Photo on 16.10.2024 at 13.17.jpeg");
-
-}
-.crossButton{
+.crossButton {
     position: relative;
     top: 20px;
     right: 10px;
@@ -58,24 +21,7 @@
     border-radius: 50%;
     font-weight: bolder;
 }
+
 .crossButton:hover {
-    transition: 0.25s;
     opacity: 1;
-}
-.crossButton:not(:hover) {
-    transition: 0.25s;
-}
-.visible {
-    display: block;
-    grid-column: span 2; /* Ensure it spans across two columns */
-    grid-row: span 2;    /* Ensure it spans across two rows */
-}
-
-
-.expanded {
-    grid-column: span 2;
-}
-
-.hidden {
-    display: none;
 }

@@ -1,0 +1,45 @@
+.sectionA {
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sectionC {
+    grid-row: span 2;
+}
+
+.sectionA, .sectionB, .sectionC, .sectionD {
+    border: 2px solid var(--foreground);
+    padding: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.sectionA:hover, .sectionB:hover, .sectionC:hover, .sectionD:hover {
+    box-shadow: 0 0 40px var(--foreground);
+}
+
+.profilePicture {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../public/Photo on 16.10.2024 at 13.17.jpeg");
+}
+
+.crossButton:hover {
+    opacity: 1;
+}
+
+/* Expanded section takes full grid */
+.expanded {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+/* Hide other sections */
+.hidden {
+    display: none;
+}

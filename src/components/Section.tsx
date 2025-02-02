@@ -1,22 +1,26 @@
-import styles from "@/app/page.module.css";
 import React from "react";
+import styles from "./Section.module.css";
 
-interface Section {
-    id: string,
-    title: string,
-    description: string,
-    onClick: (event: React.MouseEvent) => void,
-    className?: string;
+interface SectionProps {
+    id: string;
+    title: string;
+    description: string;
+    onClick: (event: React.MouseEvent) => void;
+    expanded: boolean;
+    isHidden: boolean;
 }
 
-export default function Section({id, title, description, onClick}: Section) {
-
+const Section: React.FC<SectionProps> = ({ id, title, description, onClick, expanded, isHidden }) => {
     return (
-        <div onClick={onClick} className={styles[id]}>
-            <h1>{title}</h1>
-            <h3>{description}</h3>
+        <div
+            id={id}
+            className={`${styles[id]} ${styles.section} ${expanded ? styles.expanded : ""} ${isHidden ? styles.hidden : ""}`}
+            onClick={onClick}
+        >
+            <h2>{title}</h2>
+            <p>{description}</p>
         </div>
+    );
+};
 
-
-    )
-}
+export default Section;
