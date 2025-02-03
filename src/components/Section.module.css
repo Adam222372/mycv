@@ -1,7 +1,16 @@
+.section{
+
+
+}
+.heading{
+    display: flex;
+    justify-content: space-between;
+    height: 200px;
+}
 .sectionA {
     grid-column: span 2;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .sectionC {
@@ -63,4 +72,6 @@
 }
 .description{
     margin: 15px 0;
+}
+.text{
 }

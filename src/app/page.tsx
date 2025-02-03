@@ -6,16 +6,15 @@ import Section from "@/components/Section";
 export default function Home() {
     const [clickedIndex, setClickedIndex] = React.useState<string | undefined>(undefined);
     const sections = [
-        { id: "sectionA", title: "About Me", description: ""},
-        { id: "sectionB", title: "Carrier", description: "Curious about my carrier?" },
+        { id: "sectionA", title: "About Me", description: "", text: "sdifhais"},
+        { id: "sectionB", title: "Carrier", description: "Curious about my carrier?", text: "ksdfhk"},
         { id: "sectionC", title: "Education", description: "" },
-        { id: "sectionD", title: "Experiences", description: "" }
+        { id: "sectionD", title: "Experiences", description: "", text: ""}
     ];
 
     function onClick(event: React.MouseEvent) {
         const id = event.currentTarget.id;
         setClickedIndex(id);
-
     }
 
     function clickOnCross() {
@@ -35,6 +34,7 @@ export default function Home() {
                     isHidden={clickedIndex !== undefined && clickedIndex !== section.id}
                     backBtn={ clickedIndex === section.id }
                     clickOnCross={clickOnCross}
+                    text={section.text}
                 />
             ))}
         </div>
