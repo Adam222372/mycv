@@ -1,11 +1,6 @@
-.section{
-
-
-}
 .heading{
     display: flex;
     justify-content: space-between;
-    height: 200px;
 }
 .sectionA {
     grid-column: span 2;
@@ -29,14 +24,7 @@
     box-shadow: 0 0 40px var(--foreground);
 }
 
-.profilePicture {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    background-position: center;
-    background-size: cover;
-    background-image: url("../../public/Photo on 16.10.2024 at 13.17.jpeg");
-}
+
 
 .crossButton:hover {
     opacity: 1;

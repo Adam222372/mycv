@@ -6,7 +6,7 @@ import Section from "@/components/Section";
 export default function Home() {
     const [clickedIndex, setClickedIndex] = React.useState<string | undefined>(undefined);
     const sections = [
-        { id: "sectionA", title: "About Me", description: "", text: "sdifhais"},
+        { id: "sectionA", title: "About Me", description: "", text: "sdifhais", photo: <img className={styles.profilePicture}/> },
         { id: "sectionB", title: "Carrier", description: "Curious about my carrier?", text: "ksdfhk"},
         { id: "sectionC", title: "Education", description: "" },
         { id: "sectionD", title: "Experiences", description: "", text: ""}
@@ -35,6 +35,7 @@ export default function Home() {
                     backBtn={ clickedIndex === section.id }
                     clickOnCross={clickOnCross}
                     text={section.text}
+                    photo={section.photo}
                 />
             ))}
         </div>
