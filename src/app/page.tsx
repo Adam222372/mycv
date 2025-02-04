@@ -6,9 +6,9 @@ import Section from "@/components/Section";
 export default function Home() {
     const [clickedIndex, setClickedIndex] = React.useState<string | undefined>(undefined);
     const sections = [
-        { id: "sectionA", title: "About Me", description: "", text: "sdifhais", photo: <img className={styles.profilePicture}/> },
-        { id: "sectionB", title: "Carrier", description: "Curious about my carrier?", text: "ksdfhk"},
-        { id: "sectionC", title: "Education", description: "" },
+        { id: "sectionA", title: "About Me", description: "", text: "", photo: <img alt={""} className={styles.profilePicture}/> },
+        { id: "sectionB", title: "Carrier", description: "Curious about my carrier?", text: ""},
+        { id: "sectionC", title: "Education", description: "", text: "" },
         { id: "sectionD", title: "Experiences", description: "", text: ""}
     ];
 

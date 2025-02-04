@@ -24,7 +24,10 @@ export default function RootLayout({
   return (
       <html lang="en" className={funelDisplay.className}>
       <body>
-      <input type={"checkbox"} className={"theme-checkbox"}/>
+      <label className="switch">
+          <input type="checkbox"/>
+              <span className="slider"></span>
+      </label>
       {children}
       </body>
       </html>
