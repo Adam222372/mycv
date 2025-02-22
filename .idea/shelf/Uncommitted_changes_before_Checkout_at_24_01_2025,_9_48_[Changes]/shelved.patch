@@ -1,0 +1,22 @@
+Index: src/components/Section.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import styles from \"@/app/page.module.css\";\nimport React from \"react\";\n\ninterface Section {\n    id: string,\n    title: string,\n    description: string,\n}\n\nexport default function Section({id, title, description}: Section) {\n    const [clicked, setClicked] = React.useState<[string, boolean]>([id, false]);\n\n    const handleClick = () => {\n        setClicked([id, true]);\n    }\n    const handleBtnHideClick = () => {\n        setClicked([\"\", false]);\n    }\n\n    return (\n        <div id={id} onClick={handleClick} className={clicked[0] === \"\" ? styles[id] : }>\n            <h1>{title}</h1>\n            <h3>{description}</h3>\n            <button className={styles.crossButton} onClick={handleBtnHideClick}>X</button>\n        </div>\n    )\n}
+===================================================================
+diff --git a/src/components/Section.tsx b/src/components/Section.tsx
+--- a/src/components/Section.tsx	(revision b13ad768183c7828ae579cf8457b33e796a95752)
++++ b/src/components/Section.tsx	(date 1737708491865)
+@@ -18,10 +18,10 @@
+     }
+ 
+     return (
+-        <div id={id} onClick={handleClick} className={clicked[0] === "" ? styles[id] : }>
++        <div id={id} onClick={handleClick} className={styles[id]}>
+             <h1>{title}</h1>
+             <h3>{description}</h3>
+-            <button className={styles.crossButton} onClick={handleBtnHideClick}>X</button>
++            <button className={styles.crossButton} onClick={handleBtnHideClick} style={{clicked[1] === false ? display:}}>X</button>
+         </div>
+     )
+ }
+\ No newline at end of file

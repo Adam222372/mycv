@@ -1,0 +1,23 @@
+Index: next.config.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import type { NextConfig } from \"next\";\n\nconst nextConfig: NextConfig = {\n  /* config options here */\n};\n\nexport default nextConfig;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/next.config.ts b/next.config.ts
+--- a/next.config.ts	(revision 7b490220c3c4047acf135df5ea09dce272044dc7)
++++ b/next.config.ts	(date 1738442648280)
+@@ -1,7 +1,9 @@
+ import type { NextConfig } from "next";
+-
++/** @type {import('next').NextConfig} */
+ const nextConfig: NextConfig = {
+-  /* config options here */
++    output: "export",
++    basePath: "/your-repo-name", // Replace with your GitHub repo name
++    assetPrefix: "/your-repo-name/",
+ };
+-
++module.exports = nextConfig;
+ export default nextConfig;

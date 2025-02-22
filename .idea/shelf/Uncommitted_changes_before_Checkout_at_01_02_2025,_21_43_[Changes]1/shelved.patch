@@ -1,0 +1,19 @@
+Index: next.config.ts
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import type { NextConfig } from \"next\";\n\nconst nextConfig: NextConfig = {\n  /* config options here */\n};\n\nexport default nextConfig;\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/next.config.ts b/next.config.ts
+--- a/next.config.ts	(revision 2585a133db6c1630c63ed4e8cce1382759709b76)
++++ b/next.config.ts	(date 1738441895226)
+@@ -3,5 +3,7 @@
+ const nextConfig: NextConfig = {
+   /* config options here */
+ };
+-
++module.exports = {
++    output: 'export',
++};
+ export default nextConfig;

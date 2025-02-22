@@ -1,0 +1,17 @@
+Index: src/components/Section.tsx
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import styles from \"@/app/page.module.css\";\nimport React from \"react\";\n\n\ninterface Section {\n    id: string,\n    title: string,\n    description: string,\n    onClick: (event: React.MouseEvent) => void,\n}\n\nexport default function Section({id, title, description, onClick}: Section) {\n\n    return (\n        <div onClick={onClick} className={styles[id]}>\n            <h1>{title}</h1>\n            <h3>{description}</h3>\n        </div>\n\n\n    )\n}
+===================================================================
+diff --git a/src/components/Section.tsx b/src/components/Section.tsx
+--- a/src/components/Section.tsx	(revision 2585a133db6c1630c63ed4e8cce1382759709b76)
++++ b/src/components/Section.tsx	(date 1738442322858)
+@@ -6,7 +6,7 @@
+     id: string,
+     title: string,
+     description: string,
+-    onClick: (event: React.MouseEvent) => void,
++    onClick: (event: React.HtmlButtonElement) => void,
+ }
+ 
+ export default function Section({id, title, description, onClick}: Section) {
