@@ -1,40 +1,43 @@
-import type {Metadata} from "next";
-import styles from "./page.module.css"
-import {remove} from "next/dist/build/webpack/loaders/resolve-url-loader/lib/file-protocol";
-
-export const metadata: Metadata = {
-  title: "Home",
-  description: "This is home of my web CV",
-};
-
-function hover(event: React.MouseEvent<HTMLDivElement>) {
-    const id = event.currentTarget.id;
-
-
-}
+"use client";
+import styles from "./page.module.css";
+import React from "react";
+import Section from "@/components/Section";
 
 export default function Home() {
-  return (
-      <div className={styles.gridContainer}>
+    const [clickedIndex, setClickedIndex] = React.useState<string | undefined>(undefined);
+    const sections = [
+        { id: "sectionA", title: "About Me", description: "", text: "", photo: <img alt={""} className={styles.profilePicture}/> },
+        { id: "sectionB", title: "Carrier", description: "Curious about my carrier?", text: ""},
+        { id: "sectionC", title: "Education", description: "", text: "" },
+        { id: "sectionD", title: "Experiences", description: "", text: ""}
+    ];
 
-        <div id={"sectionA"} className={styles.sectionA} >
-          <div>
-            <h1>About me</h1>
-          </div>
-          <div className={styles.profilePicture}/>
-        </div>
+    function onClick(event: React.MouseEvent) {
+        const id = event.currentTarget.id;
+        setClickedIndex(id);
+    }
 
-        <div id={"sectionB"} className={styles.sectionB}>
-          <h1>Carrier</h1>
-        </div>
-        <div id={"sectionC"} className={styles.sectionC}>
-          <h1>Education</h1>
-        </div>
+    function clickOnCross() {
+        setClickedIndex(undefined);
+    }
 
-        <div id={"sectionD"} className={styles.sectionD}>
-          <h1>Experiences</h1>
+    return (
+        <div className={styles.gridContainer}>
+            {sections.map((section) => (
+                <Section
+                    key={section.id}
+                    id={section.id}
+                    title={section.title}
+                    description={section.description}
+                    onClick={onClick}
+                    expanded={clickedIndex === section.id}
+                    isHidden={clickedIndex !== undefined && clickedIndex !== section.id}
+                    backBtn={ clickedIndex === section.id }
+                    clickOnCross={clickOnCross}
+                    text={section.text}
+                    photo={section.photo}
+                />
+            ))}
         </div>
-
-      </div>
-  );
+    );
 }

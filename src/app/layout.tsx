@@ -1,7 +1,6 @@
-'use client';
-
 import {Funnel_Display} from "next/font/google";
 import "./globals.css";
+import React from "react";
 
 
 //const [preferedTheme, setTheme] = useState("dark");
@@ -25,7 +24,10 @@ export default function RootLayout({
   return (
       <html lang="en" className={funelDisplay.className}>
       <body>
-      <input type={"checkbox"} className={"theme-checkbox"}/>
+      <label className="switch">
+          <input type="checkbox"/>
+              <span className="slider"></span>
+      </label>
       {children}
       </body>
       </html>

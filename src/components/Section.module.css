@@ -1,0 +1,65 @@
+.heading{
+    display: flex;
+    justify-content: space-between;
+}
+.sectionA {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionC {
+    grid-row: span 2;
+}
+
+.sectionA, .sectionB, .sectionC, .sectionD {
+    border: 2px solid var(--foreground);
+    padding: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.sectionA:hover, .sectionB:hover, .sectionC:hover, .sectionD:hover {
+    box-shadow: 0 0 40px var(--foreground);
+}
+
+
+
+.crossButton:hover {
+    opacity: 1;
+}
+
+/* Expanded section takes full grid */
+.expanded {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+/* Hide other sections */
+.hidden {
+    display: none;
+}
+.crossButton {
+    background-color: var(--foreground);
+    color: var(--background);
+    opacity: 0.7;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-weight: bolder;
+    font-size: 0.8rem;
+}
+
+.crossButton:hover {
+    opacity: 1;
+}
+.title{
+    margin: 0 auto;
+}
+.description{
+    margin: 15px 0;
+}
+.text{
+}
