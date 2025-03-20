@@ -1,0 +1,27 @@
+[
+  {
+    "id": "about-me",
+    "title": "About Me",
+    "description": "",
+    "text": "",
+    "photoUrl": ""
+  },
+  {
+    "id": "carrier",
+    "title": "Carrier",
+    "description": "Curious about my carrier?",
+    "text": ""
+  },
+  {
+    "id": "education",
+    "title": "Education",
+    "description": "",
+    "text": ""
+  },
+  {
+    "id": "expreriences",
+    "title": "Experiences",
+    "description": "",
+    "text": ""
+  }
+]
