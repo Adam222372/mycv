@@ -1,13 +1,9 @@
-import data from "@/data.json"
+import Grid from "@/components/Grid"
+
 export default function Home() {
     return (
         <>
-            {data.map((item, index) => (
-                <div key={index}>
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
-                </div>
-            ))}
+           <Grid></Grid>
         </>
     );
 }

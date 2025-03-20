@@ -1,20 +1,12 @@
 import {Funnel_Display} from "next/font/google";
 import "./globals.css";
 import React from "react";
-
-
-//const [preferedTheme, setTheme] = useState("dark");
+import Link from "next/link";
 
 const funelDisplay = Funnel_Display({
     subsets: ['latin'],
     weight: ['400']
 })
-/*
-const handleClick = () => {
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-    const newColorScheme = event.matches ? "dark" : "light";
-  });
-}*/
 
 export default function RootLayout({
                                       children
@@ -25,10 +17,10 @@ export default function RootLayout({
         <html lang="en" className={funelDisplay.className}>
         <body>
         <nav className={"mx-8 flex justify-between items-center"}>
-            <h1>Adam Holeček</h1>
-            <ul className={"flex space-x-6"}>
-                <li>Home</li>
-                <li>Contact me</li>
+            <Link href={"/"}><h1 className={"text-3xl m-8"}>Adam Holeček</h1></Link>
+            <ul className={"flex space-x-4 "}>
+                <Link href={"/"}><li className={"p-5"}>Home</li></Link>
+                <Link href={"/contact"} className={"p-5"}><li>Contact me</li></Link>
             </ul>
         </nav>
         {children}
