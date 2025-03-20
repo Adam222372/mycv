@@ -6,6 +6,7 @@
     grid-column: span 2;
     display: flex;
     flex-direction: column;
+
 }
 
 .sectionC {
@@ -17,7 +18,7 @@
     padding: 20px;
     border-radius: 30px;
     cursor: pointer;
-    transition: box-shadow 0.3s;
+    transition: all 0.5s ease-in-out;
 }
 
 .sectionA:hover, .sectionB:hover, .sectionC:hover, .sectionD:hover {
@@ -32,14 +33,21 @@
 
 /* Expanded section takes full grid */
 .expanded {
-    grid-column: span 2;
-    grid-row: span 3;
+    grid-column: span 2; /* Stretches across all columns */
+    grid-row: span 3; /* Stretches across all rows */
+    transition: all 0.5s ease-in-out;
+
 }
+
+
 
 /* Hide other sections */
 .hidden {
-    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none
 }
+
 .crossButton {
     background-color: var(--foreground);
     color: var(--background);
